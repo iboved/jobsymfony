@@ -1,0 +1,3 @@
+iboved_advert_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: IbovedAdvertBundle:Default:index }

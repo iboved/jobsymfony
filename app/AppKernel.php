@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new AppBundle\AppBundle(),
+            new Iboved\AdvertBundle\IbovedAdvertBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
