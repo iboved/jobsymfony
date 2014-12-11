@@ -1,4 +1,0 @@
-services:
-#    iboved_advert.example:
-#        class: Iboved\AdvertBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]

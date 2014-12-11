@@ -1,3 +1,7 @@
 iboved_advert_homepage:
     path:     /hello/{name}
     defaults: { _controller: IbovedAdvertBundle:Default:index }
+
+iboved_advert_index:
+    resource: "@IbovedAdvertBundle/Controller/"
+    type:     annotation
