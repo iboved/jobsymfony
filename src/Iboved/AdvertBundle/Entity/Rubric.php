@@ -7,10 +7,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Table(name="category")
+ * @ORM\Table(name="rubric")
  * @ORM\Entity
  */
-class Category
+class Rubric
 {
     /**
      * @ORM\Column(name="id", type="integer")
@@ -25,7 +25,7 @@ class Category
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="Advert", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="Advert", mappedBy="rubric")
      */
     private $adverts;
 
@@ -48,7 +48,7 @@ class Category
      * Set name
      *
      * @param string $name
-     * @return Category
+     * @return Rubric
      */
     public function setName($name)
     {
@@ -71,7 +71,7 @@ class Category
      * Add adverts
      *
      * @param \Iboved\AdvertBundle\Entity\Advert $adverts
-     * @return Category
+     * @return Rubric
      */
     public function addAdvert(\Iboved\AdvertBundle\Entity\Advert $adverts)
     {

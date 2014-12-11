@@ -29,17 +29,23 @@ class Advert
     private $description;
 
     /**
-     * @ORM\Column(name="due_date", type="datetime")
+     * @ORM\Column(name="created_at", type="datetime")
      * @Assert\NotBlank()
      * @Assert\Type("\DateTime")
      */
-    private $dueDate;
+    private $createdAt;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="adverts", cascade={"persist"})
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Rubric", inversedBy="adverts", cascade={"persist"})
+     * @ORM\JoinColumn(name="rubric_id", referencedColumnName="id")
      */
-    protected $category;
+    private $rubric;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="adverts", cascade={"persist"})
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
 
     /**
      * Get id
@@ -98,48 +104,71 @@ class Advert
     }
 
     /**
-     * Set dueDate
+     * Set createdAt
      *
-     * @param \DateTime $dueDate
+     * @param \DateTime $createdAt
      * @return Advert
      */
-    public function setDueDate($dueDate)
+    public function setCreatedAt($createdAt)
     {
-        $this->dueDate = $dueDate;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
 
     /**
-     * Get dueDate
+     * Get createdAt
      *
      * @return \DateTime 
      */
-    public function getDueDate()
+    public function getCreatedAt()
     {
-        return $this->dueDate;
+        return $this->createdAt;
     }
 
     /**
-     * Set category
+     * Set rubric
      *
-     * @param \Iboved\AdvertBundle\Entity\Category $category
+     * @param \Iboved\AdvertBundle\Entity\Rubric $rubric
      * @return Advert
      */
-    public function setCategory(\Iboved\AdvertBundle\Entity\Category $category = null)
+    public function setRubric(\Iboved\AdvertBundle\Entity\Rubric $rubric = null)
     {
-        $this->category = $category;
+        $this->rubric = $rubric;
 
         return $this;
     }
 
     /**
-     * Get category
+     * Get rubric
      *
-     * @return \Iboved\AdvertBundle\Entity\Category 
+     * @return \Iboved\AdvertBundle\Entity\Rubric
      */
-    public function getCategory()
+    public function getRubric()
     {
-        return $this->category;
+        return $this->rubric;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Iboved\AdvertBundle\Entity\User $user
+     * @return Advert
+     */
+    public function setUser(\Iboved\AdvertBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Iboved\AdvertBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }
