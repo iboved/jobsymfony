@@ -5,33 +5,15 @@
 {% block container %}
     {{ form_start(form) }}
     {{ form_errors(form) }}
-        <legend>Create advert</legend>
-        <div>
-            {{ form_row(form.user.name) }}
-        </div>
 
-        <div>
-            {{ form_row(form.user.city) }}
-        </div>
+    <legend>Create advert</legend>
+    {{ form_row(form.user.name) }}
+    {{ form_row(form.user.city) }}
+    {{ form_row(form.user.email) }}
+    {{ form_row(form.user.phone) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.description) }}
+    {{ form_row(form.rubric) }}
 
-        <div>
-            {{ form_row(form.user.email) }}
-        </div>
-
-        <div>
-            {{ form_row(form.user.phone) }}
-        </div>
-
-        <div>
-            {{ form_row(form.title) }}
-        </div>
-
-        <div>
-            {{ form_row(form.description) }}
-        </div>
-
-        <div>
-            {{ form_row(form.rubric) }}
-        </div>
     {{ form_end(form) }}
 {% endblock %}

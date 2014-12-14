@@ -48,4 +48,18 @@ class AdvertController extends Controller
 
         return array("form" =>  $form->createView());
     }
+
+    /**
+     * @Template
+     * @Route("/advert/{slug}/")
+     * @Method({"GET"})
+     */
+    public function viewAction($slug)
+    {
+        $advert = $this->getDoctrine()
+            ->getRepository('IbovedAdvertBundle:Advert')
+            ->findOneBySlug($slug);
+
+        return array("advert" =>  $advert);
+    }
 }

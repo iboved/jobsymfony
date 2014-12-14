@@ -1,0 +1,16 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    {{ advert.title }}
+{% endblock %}
+
+{% block container %}
+    <h2> {{ advert.title }} </h2>
+    <p> {{ advert.description }} </p>
+    <p> {{ advert.rubric.name }} </p>
+    <p> {{ advert.createdAt|date }} </p>
+    <p> {{ advert.user.name }} </p>
+    <p> {{ advert.user.city }} </p>
+    <p> {{ advert.user.email }} </p>
+    <p> {{ advert.user.phone }} </p>
+{% endblock %}

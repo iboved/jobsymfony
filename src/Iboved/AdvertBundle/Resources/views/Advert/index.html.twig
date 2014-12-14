@@ -20,7 +20,7 @@
                         <p> {{ advert.description|slice(0, 195) }}... </p>
                         <p> {{ advert.rubric.name }} </p>
                         <p> {{ advert.createdAt|date }} </p>
-                        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                        <p><a class="btn btn-default" href="{{ path('iboved_advert_advert_view', {'slug' : advert.slug}) }}" role="button">View details &raquo;</a></p>
                     </div><!--/.col-xs-4.col-lg-4-->
             {% endfor %}
             </div><!--/row-->
