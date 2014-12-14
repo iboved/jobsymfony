@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Table(name="rubric")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Iboved\AdvertBundle\Repository\RubricRepository")
  */
 class Rubric
 {
@@ -98,5 +98,10 @@ class Rubric
     public function getAdverts()
     {
         return $this->adverts;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 }

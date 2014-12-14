@@ -25,8 +25,8 @@ class LoadData implements FixtureInterface
         $user->setPhone("0968763535");
 
         $advert = new Advert();
-        $advert->setTitle("BMV X6");
-        $advert->setDescription("Coming with a more robust design and outstanding performance, the 2015 BMW X6 strengthens its position as a leading exponent of exclusive driving pleasure in the segment.");
+        $advert->setTitle("BMW X6");
+        $advert->setDescription("Coming with a more robust design and outstanding performance, the 2015 BMW X6 strengthens its position as a leading exponent of exclusive driving pleasure in the segment. The new X6 is longer and lower than the last-generation X5 on which it is based, seating only four.");
         $advert->setCreatedAt(new \DateTime());
         $advert->setRubric($rubric);
         $advert->setUser($user);

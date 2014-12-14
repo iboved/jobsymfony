@@ -3,6 +3,7 @@
 namespace Iboved\AdvertBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -30,8 +31,7 @@ class Advert
 
     /**
      * @ORM\Column(name="created_at", type="datetime")
-     * @Assert\NotBlank()
-     * @Assert\Type("\DateTime")
+     * @Gedmo\Timestampable(on="create")
      */
     private $createdAt;
 

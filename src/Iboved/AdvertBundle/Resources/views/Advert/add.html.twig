@@ -1,0 +1,37 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Creating advert{% endblock %}
+
+{% block container %}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+        <legend>Create advert</legend>
+        <div>
+            {{ form_row(form.user.name) }}
+        </div>
+
+        <div>
+            {{ form_row(form.user.city) }}
+        </div>
+
+        <div>
+            {{ form_row(form.user.email) }}
+        </div>
+
+        <div>
+            {{ form_row(form.user.phone) }}
+        </div>
+
+        <div>
+            {{ form_row(form.title) }}
+        </div>
+
+        <div>
+            {{ form_row(form.description) }}
+        </div>
+
+        <div>
+            {{ form_row(form.rubric) }}
+        </div>
+    {{ form_end(form) }}
+{% endblock %}
