@@ -5,12 +5,18 @@
 {% endblock %}
 
 {% block container %}
-    <h2> {{ advert.title }} </h2>
-    <p> {{ advert.description }} </p>
-    <p> {{ advert.rubric.name }} </p>
-    <p> {{ advert.createdAt|date }} </p>
-    <p> {{ advert.user.name }} </p>
-    <p> {{ advert.user.city }} </p>
-    <p> {{ advert.user.email }} </p>
-    <p> {{ advert.user.phone }} </p>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h2> {{ advert.title }} </h2>
+            <p> {{ advert.description }} </p>
+            <p>Rubric: {{ advert.rubric.name }} </p>
+            <p>Date: {{ advert.createdAt|date }} </p>
+            <hr>
+            <h4>Contacts</h4>
+            Name: {{ advert.user.name }} <br>
+            City: {{ advert.user.city }} <br>
+            Email: <a href="mailto:#"> {{ advert.user.email }} </a> <br>
+            <abbr title="Phone">Phone:</abbr> {{ advert.user.phone }}
+        </div>
+    </div>
 {% endblock %}

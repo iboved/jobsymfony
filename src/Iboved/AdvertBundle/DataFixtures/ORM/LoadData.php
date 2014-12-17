@@ -22,7 +22,7 @@ class LoadData implements FixtureInterface
         $user->setName("Pavel");
         $user->setCity("Cherkasy");
         $user->setEmail("durov@gmail.com");
-        $user->setPhone("0968763535");
+        $user->setPhone("+380968763535");
 
         $advert = new Advert();
         $advert->setTitle("BMW X6");
@@ -42,7 +42,7 @@ class LoadData implements FixtureInterface
         $user->setName("Mark");
         $user->setCity("Kyiv");
         $user->setEmail("zuckerberg@gmail.com");
-        $user->setPhone("0638742727");
+        $user->setPhone("+380638742727");
 
         $advert = new Advert();
         $advert->setTitle("MacBookAir 11");
