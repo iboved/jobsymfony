@@ -39,6 +39,9 @@ class AdvertController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $this->get('iboved.advert.phone_handler')
+                ->editPhone($advert);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($advert);
             $em->flush();
@@ -51,7 +54,7 @@ class AdvertController extends Controller
 
     /**
      * @Template
-     * @Route("/advert/{slug}/")
+     * @Route("/advert/{slug}")
      * @Method({"GET"})
      */
     public function viewAction($slug)
