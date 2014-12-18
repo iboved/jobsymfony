@@ -36,6 +36,8 @@ class User
 
     /**
      * @ORM\Column(name="phone", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min = "10")
      */
     private $phone;
 
