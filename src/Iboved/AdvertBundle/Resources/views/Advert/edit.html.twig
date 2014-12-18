@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    Edit advert {{ advert.title }}
+{% endblock %}
+
+{% block container %}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    <legend>Edit advert</legend>
+    {{ form_row(form.user.name) }}
+    {{ form_row(form.user.city) }}
+    {{ form_row(form.user.email) }}
+    {{ form_row(form.user.phone) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.description) }}
+    {{ form_row(form.rubric) }}
+
+    {{ form_end(form) }}
+{% endblock %}

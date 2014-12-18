@@ -16,7 +16,8 @@
             Name: {{ advert.user.name }} <br>
             City: {{ advert.user.city }} <br>
             Email: <a href="mailto:#"> {{ advert.user.email }} </a> <br>
-            <abbr title="Phone">Phone:</abbr> {{ advert.user.phone }}
+            <abbr title="Phone">Phone:</abbr> {{ advert.user.phone }} <br>
+            <div align="right"><a href="{{ path('iboved_advert_advert_edit', {'slug' : advert.slug}) }}">Edit</a></div>
         </div>
     </div>
 {% endblock %}

@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class AddAdvertType extends AbstractType
+class EditAdvertType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -30,6 +30,7 @@ class AddAdvertType extends AbstractType
 
     public function getName()
     {
-        return 'addAdvert';
+        return 'editAdvert';
     }
+
 }
