@@ -7,6 +7,7 @@ use Iboved\AdvertBundle\Form\Type\AddAdvertType;
 use Iboved\AdvertBundle\Form\Type\EditAdvertType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -107,5 +108,21 @@ class AdvertController extends Controller
             "form" =>  $form->createView(),
             "advert" =>  $advert,
         );
+    }
+
+    /**
+     * @Template
+     * @Route("/advert/{slug}/delete")
+     * @Method({"DELETE"})
+     */
+    public function deleteAdvertAction($slug)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $post = $em->getRepository('IbovedAdvertBundle:Advert')->findBySlug($slug);
+
+        $em->remove($post);
+        $em->flush();
+
+        return JsonResponse::create(["code" => 200]);
     }
 }

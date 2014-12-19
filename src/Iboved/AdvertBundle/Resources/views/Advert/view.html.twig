@@ -9,8 +9,9 @@
         <div class="panel-body">
             <h2> {{ advert.title }} </h2>
             <p> {{ advert.description }} </p>
+            <p>Price: {{ advert.price }} </p>
             <p>Rubric: {{ advert.rubric.name }} </p>
-            <p>Date: {{ advert.createdAt|date }} </p>
+            <p>Created: {{ advert.createdAt|date }} </p>
             <hr>
             <h4>Contacts</h4>
             Name: {{ advert.user.name }} <br>

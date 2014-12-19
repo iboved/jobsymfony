@@ -30,6 +30,11 @@ class Advert
     private $description;
 
     /**
+     * @ORM\Column(name="price", type="integer")
+     */
+    private $price;
+
+    /**
      * @ORM\Column(name="created_at", type="datetime")
      * @Gedmo\Timestampable(on="create")
      */
@@ -199,5 +204,28 @@ class Advert
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Set price
+     *
+     * @param integer $price
+     * @return Advert
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return integer 
+     */
+    public function getPrice()
+    {
+        return $this->price;
     }
 }

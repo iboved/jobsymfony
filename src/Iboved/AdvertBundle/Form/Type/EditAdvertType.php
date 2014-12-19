@@ -14,6 +14,7 @@ class EditAdvertType extends AbstractType
             ->add('user', new AddUserType())
             ->add('title')
             ->add('description')
+            ->add('price')
             ->add('rubric', 'entity', [
                 'class' => 'IbovedAdvertBundle:Rubric',
                 'multiple' => false
