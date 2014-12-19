@@ -41,6 +41,12 @@ class Advert
     private $createdAt;
 
     /**
+     * @ORM\Column(name="updated_at", nullable=true, type="datetime")
+     * @Gedmo\Timestampable(on="update")
+     */
+    private $updatedAt;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Rubric", inversedBy="adverts", cascade={"persist"})
      * @ORM\JoinColumn(name="rubric_id", referencedColumnName="id")
      */
@@ -227,5 +233,28 @@ class Advert
     public function getPrice()
     {
         return $this->price;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     * @return Advert
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime 
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }
