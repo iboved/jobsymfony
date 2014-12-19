@@ -41,10 +41,15 @@ class Advert
     private $createdAt;
 
     /**
-     * @ORM\Column(name="updated_at", nullable=true, type="datetime")
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      * @Gedmo\Timestampable(on="update")
      */
     private $updatedAt;
+
+    /**
+     * @ORM\Column(name="deleted_at", type="datetime", nullable=true)
+     */
+    private $deletedAt;
 
     /**
      * @ORM\ManyToOne(targetEntity="Rubric", inversedBy="adverts", cascade={"persist"})
@@ -256,5 +261,28 @@ class Advert
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * Set deletedAt
+     *
+     * @param \DateTime $deletedAt
+     * @return Advert
+     */
+    public function setDeletedAt($deletedAt)
+    {
+        $this->deletedAt = $deletedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get deletedAt
+     *
+     * @return \DateTime 
+     */
+    public function getDeletedAt()
+    {
+        return $this->deletedAt;
     }
 }

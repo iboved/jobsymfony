@@ -118,9 +118,9 @@ class AdvertController extends Controller
     public function deleteAdvertAction($slug)
     {
         $em = $this->getDoctrine()->getManager();
-        $post = $em->getRepository('IbovedAdvertBundle:Advert')->findBySlug($slug);
+        $advert = $em->getRepository('IbovedAdvertBundle:Advert')->findBySlug($slug)[0];
 
-        $em->remove($post);
+        $em->remove($advert);
         $em->flush();
 
         return JsonResponse::create(["code" => 200]);
